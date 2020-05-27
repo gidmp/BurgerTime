@@ -1,0 +1,18 @@
+<h1>Borgar</h1>
+
+<h2>can i haz cheezburger</h2>
+
+<div>
+    <h2>Borgars ready to be consume</h2>
+    <ul>
+        {{#each burgers}} 
+        {{#unless this.eaten}}
+        <li>
+            <p>{{this.id}}. {{this.burger_name}}</p>
+
+            <button data-id="{{this.id}}" class="eatBurger">CONSUME</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>

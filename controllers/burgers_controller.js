@@ -13,10 +13,21 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/", function (req, res) {
-    burger.insertOne()
+router.post("/api/burgers", function (req, res) {
+    burger.insertOne(req.body.burger_name, function(){
+        res.status(200).end();
+    })
 });
-  
+
+router.put("/api/burgers/:id", function (req, res) {
+    burger.updateOne(req.params.id, function(result){
+        if (result.changedRows === 0) {
+            res.status(404).end();
+        }
+        res.status(200).end();
+    })
+
+});
 
 
 module.exports = router;
