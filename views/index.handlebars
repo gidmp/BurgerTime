@@ -2,17 +2,31 @@
 
 <h2>can i haz cheezburger</h2>
 
-<div>
+<div id = "notEaten">
     <h2>Borgars ready to be consume</h2>
     <ul>
         {{#each burgers}} 
         {{#unless this.eaten}}
         <li>
-            <p>{{this.id}}. {{this.burger_name}}</p>
-
-            <button data-id="{{this.id}}" class="eatBurger">CONSUME</button>
+            {{> burgers/burger-block eaten=false}}
+        
         </li>
         {{/unless}}
         {{/each}}
     </ul>
 </div>
+
+
+<div id = "eaten">
+    <h2>Borgars consumed</h2>
+    <ul>
+        {{#each burgers}} 
+        {{#if this.eaten}}
+        <li>
+            {{> burgers/burger-eaten eaten=true}}
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
