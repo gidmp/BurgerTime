@@ -1,0 +1,30 @@
+* {
+    font-family: 'Bangers', cursive;
+    color: whitesmoke;
+}
+
+body {
+    background-image: url(../images/burger.png);
+    background-size: cover;
+}
+
+.change-eaten {
+    background-color: orange;
+    color: black;
+}
+
+.to-be-consumed {
+    display: inline;
+}
+
+.burger-input {
+    border: 2px solid white;
+}
+
+.card-body{
+    background: rgb(76, 175, 80);
+}
+
+.offset-md-3{
+    text-align: center;
+}
