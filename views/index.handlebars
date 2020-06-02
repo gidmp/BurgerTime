@@ -1,56 +1,78 @@
-<h1>Borgar</h1>
+<section id = "title">
+    <div class="container burger-title">
+        <a class="navbar-brand" href="#"><h1>Borgar</h1></a>
+        <p id = "tagline">Go eat some burger or something.</p>
+    </div>
+</section>
 
-<h2>can i haz cheezburger</h2>
-<div class = "container">
-    <div class = "row">
-        <div class = "col-md-4">
-            <div id = "notEaten">
-                <h2>Borgars ready to be consume</h2>
-                <ul>
-                    {{#each burgers}} 
-                    {{#unless this.eaten}}
-                    <li class = "to-be-consumed">
-                        <div class="card">
-                            <div class="card-body">
-                                {{> burgers/burger-block eaten=false}}
-                            </div>
+
+<section id = "burger lists">
+    <div class = "container">
+        <div class = "section">
+            <div class = "wrapper">
+                <div class = "row">
+                    <div class = "col-md-4">
+                        <div id = "notEaten">
+                            <h2>Borgars ready to be consume</h2>
+                            <ul>
+                                {{#each burgers}} 
+                                {{#unless this.eaten}}
+                                <li class = "to-be-consumed">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            {{> burgers/burger-block eaten=false}}
+                                        </div>
+                                    </div>
+                                </li>
+                                {{/unless}}
+                                {{/each}}
+                            </ul>
+                        </div>            
+                    </div>
+
+                    <div class = "col-md-4 offset-md-4">
+                        <div id = "eaten">
+                            <h2>Borgars consumed</h2>
+                            <ul>
+                                {{#each burgers}} 
+                                {{#if this.eaten}}
+                                <li>
+                                    {{> burgers/burger-eaten eaten=true}}
+                                </li>
+                                {{/if}}
+                                {{/each}}
+                            </ul>
                         </div>
-                    </li>
-                    {{/unless}}
-                    {{/each}}
-                </ul>
-            </div>            
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class = "col-md-4 offset-md-4">
-            <div id = "eaten">
-                <h2>Borgars consumed</h2>
-                <ul>
-                    {{#each burgers}} 
-                    {{#if this.eaten}}
-                    <li>
-                        {{> burgers/burger-eaten eaten=true}}
-                    </li>
-                    {{/if}}
-                    {{/each}}
-                </ul>
+
+
+<section id = "burger-input">
+    <div class = "container">
+        <div class = "section">
+            <div class = "wrapper">
+                <div class="row burger-input">
+                    <div class="col-md-6 offset-md-3">
+                        <h2>Add Burger</h2>
+
+                        <form class="create-form">
+                            <div class="form-group">
+                                <label for="addBurger">Enter your burger</label>
+                                <input type="text" id="addBurger">
+                            </div>
+
+                            <button id="addBurgerButton" class = "btn btn-warning" type="submit">Add Burger to list</button>
+                        </form>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
 
-    <div class="row burger-input">
-        <div class="col-md-6 offset-md-3">
-            <h2>Add Burger</h2>
-
-            <form class="create-form">
-                <div class="form-group">
-                    <label for="addBurger">Enter your burger</label>
-                    <input type="text" id="addBurger">
-                </div>
-
-                <button id="addBurgerButton" class = "btn btn-warning" type="submit">Add Burger to list</button>
-            </form>
-        </div>
-    </div>
-</div>
-
+</section>
