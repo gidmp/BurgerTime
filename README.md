@@ -3,6 +3,8 @@
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md) 
 
+## Deployed site : https://intense-meadow-11113.herokuapp.com/
+
 
 ## Description
 ------
@@ -51,6 +53,8 @@ BurgerTime is an app that uses the Model, View, and Controller (MVC) design patt
 
 ## Demo
 ------
+
+![](./public/assets/images/burger.gif)
 
 
 ## User Story
